@@ -10,3 +10,4 @@ export function getUrl(query) {
     const url = `${BASE_URL}?${params}`;
     return fetch(url).then(res => res.json());
 }
+// console.log(getUrl());

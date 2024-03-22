@@ -1,4 +1,4 @@
-import { gallery, lightbox} from "../main";
+import { refs, lightbox} from "../main";
 export function createMarcup(arr) {
     if (arr.length === 0) {
         iziToast.error({
