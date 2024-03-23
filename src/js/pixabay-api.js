@@ -1,3 +1,5 @@
+import { inputSearch, showLoader } from '../main';
+
 export function getUrl(query) {
     const BASE_URL = "https://pixabay.com/api/";
     const params = new URLSearchParams({
@@ -7,7 +9,13 @@ export function getUrl(query) {
         orientation: "horizontal",
         safesearch: true
     })
+    showLoader();
     const url = `${BASE_URL}?${params}`;
-    return fetch(url).then(res => res.json());
+     return fetch(url).then(response => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    return response.json();
+  })
 }
 // console.log(getUrl());
