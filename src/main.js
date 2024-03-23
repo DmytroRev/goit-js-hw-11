@@ -15,6 +15,7 @@ preloader.style.display = 'none';
 
 export const showLoader = () => {
     preloader.style.display = 'flex';
+    
 };
 const hideLoader = () => {
     preloader.style.display = 'none';
@@ -37,6 +38,7 @@ if (query !== "") {
         .then((images) => {
             createMarcup(images.hits);
             form.reset(); 
+            hideLoader();
         })
         .catch((error) => {
             console.log(error);

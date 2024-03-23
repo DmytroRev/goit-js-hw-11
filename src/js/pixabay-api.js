@@ -18,4 +18,3 @@ export function getUrl(query) {
     return response.json();
   })
 }
-// console.log(getUrl());
